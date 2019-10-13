@@ -12,10 +12,11 @@ import {
   MatInputModule,
   MatProgressSpinnerModule,
  } from '@angular/material';
+import { MakeItemComponent } from './component/make-item/make-item.component';
 
 
 @NgModule({
-  declarations: [SpotifyTutorialComponent, AlertComponent, PartySetupComponent],
+  declarations: [SpotifyTutorialComponent, AlertComponent, PartySetupComponent, MakeItemComponent],
   imports: [
     CommonModule,
     MatSnackBarModule,

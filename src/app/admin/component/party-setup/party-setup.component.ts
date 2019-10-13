@@ -37,29 +37,14 @@ export class PartySetupComponent implements OnInit {
       await this.partyService.singup(
         this.loginForm.getRawValue().email, this.loginForm.getRawValue().password,
         this.loginForm.getRawValue().handle, this.loginForm.getRawValue().spotify);
+      this.partyService.party = this.loginForm.getRawValue().handle;
       this.logedIn = true;
-      this.addItemForm = new FormGroup({
-        item: new FormControl(''),
-      });
     } catch ({ message = 'Error authentication, please try again' }) {
       this.loginError = message;
       this.snackbarService.showError(message, 'Close');
     } finally {
       this.loading = false;
-    }
-  }
-
-  async addItem() {
-    try {
-      const item = this.addItemForm.getRawValue().item;
-      this.loading = true;
-      await this.partyService.addItem(item);
-      this.snackbarService.showError(`Item added!` , 'Close');
-    } catch ({ message = 'Error authentication, please try again' }) {
-      this.loginError = message;
-
-    } finally {
-      this.loading = false;
+      this.router.navigate(['/planners/add']);
     }
   }
 

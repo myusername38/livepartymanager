@@ -30,15 +30,4 @@
       <p>Alerts</p>
     </button>
   </div>
-  <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="addItem()" *ngIf="logedIn">
-      <h1 class="mt-sm mb-sm">Add Items to Your Party</h1>
-      <h2 class="mb-xs mt-xs">Add an Item</h2>
-      <mat-form-field class="keycode" appearance="fill">
-        <mat-label>Party Item:</mat-label>
-        <input type="text" formControlName="item" class="form-control white" matInput/>
-      </mat-form-field>
-      <button class="mlr-auto" mat-raised-button color="primary" [disabled]="loginForm.pristine || loginForm.invalid">
-        <h1>Add Item!</h1>
-      </button>
-    </form>
 </div>

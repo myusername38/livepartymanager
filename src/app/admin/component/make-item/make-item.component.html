@@ -1,0 +1,16 @@
+<div class="login-box w-100 p-sm pt-lg mlr-auto mt-sm" fxLayout="column" fxLayoutAlign="center center">
+  <h1 class="mt-sm mb-sm">Add Item to Party</h1>
+  <form class="login-form mlr-auto  w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="addItemForm" (ngSubmit)="addItem()" >
+    <h2 class="mb-xs mt-xs">Enter item name</h2>
+    <mat-form-field class="keycode" appearance="fill">
+      <mat-label>Item:</mat-label>
+      <input type="text" formControlName="item" class="form-control white" matInput/>
+    </mat-form-field>
+    <button class="mlr-auto" mat-raised-button color="primary">
+      <h1>Add Item!</h1>
+    </button>
+  </form>
+  <button mat-button class="mt-xs mb-xs" (click)="alert()">
+    <p>Alerts</p>
+  </button>
+</div>
