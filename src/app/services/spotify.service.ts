@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SpotifyService {
 
-  spotifyToken: string = 'BQD_TJ7ErMAUGUh5uFIRzZHluknj-kxpC-Om5y3GjX6fO0HWcudMeN1yY7u9penJaEWywHb17-NYkVbFdRBfJlAT3dXs_hONsJd2v7faRg0kyHRdEeYeU-4zNWnf5c4zlYIXQ1q2M_NIlnoxBnRDFAo';
+  spotifyToken: string = 'BQAI-Q7gk8FiL63gQDZH1kOD3-IchpAOwe-4KHblVV4OhCQ0b0dO5LV2ZIsxgkFXnh22kkwMAHxhGzR21zYS9ytouiKbTMu1dFAeDPJRYAjDzV1xaOIQEabObvttDfYq-n6uZso7_xlDsQxpWZIhNe8';
 
   constructor(private http: HttpClient) { }
 
@@ -16,12 +16,15 @@ export class SpotifyService {
   getToken(){
     return this.spotifyToken;
   }
-  async getCurrentSong(): Promise<any> {
+  async getCurrentSong(token: string): Promise<any> {
     if (!this.spotifyToken) {
       return;
     }
     return this.http.get(`https://api.spotify.com/v1/me/player/currently-playing`,
-    { headers: { Accept : 'applicationn/json', Authorization: `Bearer ${ this.spotifyToken }` }}).toPromise();
+    { headers: { Accept : 'applicationn/json', Authorization: `Bearer ${ token }` }}).toPromise();
   }
+
+
+
 
 }
