@@ -1,13 +1,15 @@
-@import '../../../vars.scss';
+@import '../../../../vars.scss';
 
 .login-box {
+  width: 600px;
   background-color: rgba(26, 8, 59, .7);
   border-radius: 20px;
-  max-width: 600px;
 }
-.keycode {
-  width: 100%;
-  min-width: 200px;
+.outter {
+  width: 100vw;
+}
+.keycode{
+  width: 300px;
 }
 .input-outter{
   border: 4px solid white;
@@ -22,7 +24,8 @@ h1 {
 }
 h2 {
   color: white;
-  font-family: $big-shoulders
+  font-family: $big-shoulders;
+  font-size: 20px;
 }
 p{
   color: white;

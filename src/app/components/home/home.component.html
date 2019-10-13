@@ -1,23 +1,22 @@
-<div class="outter w-100 h-100" fxLayoutAlign="center center">
-  <div class="login-box p-sm pt-lg" fxLayout="column" fxLayoutAlign="center center">
-    <h1 class="mt-sm mb-md">Live Party Manager</h1>
-    <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="keycode" appearance="fill">
-        <mat-label>Party Keycode:</mat-label>
-        <input type="text" formControlName="keycode" class="form-control white" matInput/>
-      </mat-form-field>
-      <button mat-raised-button color="primary" class="mb-md w-100" [disabled]="loginForm.pristine || loginForm.invalid">
-          <div class="login-button" fxLayout="row" fxLayoutAlign="center center">
-            <div class="placeholder mr-sm"></div>
-            <h1>Join the Party!</h1>
-            <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
-            <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
-          </div>
-        </button>
-    </form>
 
-    <button mat-button>
-      <h2>Hosting?</h2>
-    </button>
-  </div>
+<div class="login-box w-100 p-sm pt-lg mlr-auto mt-sm" fxLayout="column" fxLayoutAlign="center center">
+  <h1 class="mt-sm mb-md">Live Party Manager</h1>
+  <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="keycode" appearance="fill">
+      <mat-label>Party Keycode:</mat-label>
+      <input type="text" formControlName="keycode" class="form-control white" matInput/>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="mb-md w-100" [disabled]="loginForm.pristine || loginForm.invalid">
+        <div class="login-button" fxLayout="row" fxLayoutAlign="center center">
+          <div class="placeholder mr-sm"></div>
+          <h1>Join the Party!</h1>
+          <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
+          <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
+        </div>
+      </button>
+  </form>
+  <button mat-button>
+    <h2>Hosting?</h2>
+  </button>
 </div>
+
