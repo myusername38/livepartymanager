@@ -1,4 +1,4 @@
-@import '../../../vars.scss';
+@import '../../../../vars.scss';
 
 .login-box {
   background-color: rgba(26, 8, 59, .7);
@@ -23,11 +23,6 @@ h1 {
 h2 {
   color: white;
   font-family: $big-shoulders
-}
-a {
-  color: white;
-  font-family: $big-shoulders;
-  font-size: $font-md
 }
 p{
   color: white;

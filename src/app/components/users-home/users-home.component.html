@@ -22,7 +22,7 @@
         <mat-label>Party Keycode:</mat-label>
         <input type="text" formControlName="keycode" class="form-control white" matInput/>
       </mat-form-field>
-      <button mat-raised-button color="primary" class="mb-md w-100" [disabled]="loginForm.pristine || loginForm.invalid">
+      <button mat-raised-button color="primary" type="submit" class="mb-md w-100" [disabled]="loginForm.pristine || loginForm.invalid">
           <div class="login-button" fxLayout="row" fxLayoutAlign="center center">
             <div class="placeholder mr-sm"></div>
             <h1>Join the Party!</h1>

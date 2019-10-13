@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SpotifyTutorialComponent } from './component/spotify-tutorial/spotify-tutorial.component';
 import { AlertComponent } from './component/alert/alert.component';
+import { PartySetupComponent } from './component/party-setup/party-setup.component';
+
 
 
 const routes: Routes = [
   {  path: '', component: SpotifyTutorialComponent },
-  { path: 'alerts', component: AlertComponent }
+  { path: 'alerts', component: AlertComponent },
+  { path: 'setup', component: PartySetupComponent }
 ];
 
 @NgModule({
