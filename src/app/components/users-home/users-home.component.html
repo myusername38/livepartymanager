@@ -1,45 +1,33 @@
-<div class="outter w-100 h-100" fxLayoutAlign="center center">
-  <div class="login-box p-sm pt-lg" fxLayout="column" fxLayoutAlign="center center">
-    <h1 class="mt-sm mb-md">Enjoy The Party!</h1>
-    <h1 class="mt-sm mb-md">Update Item Status:</h1>
-    <div fxLayout="row" fxLayoutAlign="space-evenly center">
-      <h1 class="mt-sm mr-sm" >Item</h1>
-      <button _ngcontent-pnj-c24="" mat-mini-fab="" [color]="'green'" class="mat-mini-fab mat-button-base mat-accent">
+<div class="main p-xs mlr-auto" fxLayout="column" fxLayoutAlign="center center" >
+  <h1 class="mt-xs mb-xs title">Alert the host</h1>
+  <div fxLayout="row" fxLayoutAlign="center center" *ngFor="let item of partyItems">
+    <h1 class="mt-xs mt-xs item-name ellipsis">{{ item.item }}:</h1>
+    <div class="pb-sm">
+      <button _ngcontent-pnj-c24="" mat-mini-fab="" [color]="'green'" class="mat-mini-fab mat-button-base mat-accent" (click)="alert(item.item, 'green')">
         <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
         <div class="mat-button-focus-overlay"></div>
       </button>
-      <button _ngcontent-pnj-c24="" mat-mini-fab="" [color]="'yellow'" class="mat-mini-fab mat-button-base mat-accent">
+      <button _ngcontent-pnj-c24="" mat-mini-fab="" [color]="'yellow'" class="mat-mini-fab mat-button-base mat-accent" (click)="alert(item.item, 'yellow')">
         <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
         <div class="mat-button-focus-overlay"></div>
       </button>
-      <button _ngcontent-pnj-c24="" mat-mini-fab="" class="mat-mini-fab mat-button-base mat-warn" [color]="'red'">
+      <button _ngcontent-pnj-c24="" mat-mini-fab="" class="mat-mini-fab mat-button-base mat-warn" [color]="'red'" (click)="alert(item.item, 'red')">
         <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
         <div class="mat-button-focus-overlay"></div>
       </button>
-    </div>
-    <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="keycode" appearance="fill">
-        <mat-label>Party Keycode:</mat-label>
-        <input type="text" formControlName="keycode" class="form-control white" matInput/>
-      </mat-form-field>
-      <button mat-raised-button color="primary" class="mb-md w-100" [disabled]="loginForm.pristine || loginForm.invalid">
-          <div class="login-button" fxLayout="row" fxLayoutAlign="center center">
-            <div class="placeholder mr-sm"></div>
-            <h1>Join the Party!</h1>
-            <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
-            <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
-          </div>
-        </button>
-    </form>
-    <div fxLayoutAlign="center center" *ngIf="currentSong">
-      <div class="spotify-box" fxLayout="row" fxLayoutAlign="center center" *ngIf="!loadingSong">
-        <img src="{{ this.currentSong.item.album.images[2].url }}">
-        <div class="ml-md" fxLayout="column" fxLayoutAlign="center center">
-          <p class="ellipsis mb-xs">{{ this?.currentSong?.item?.name }}</p>
-          <p class="ellipsis mt-0">{{ this?.currentSong?.item?.artists[0].name }}</p>
-        </div>
-      </div>
-      <mat-spinner [diameter]="20" *ngIf="loadingSong"></mat-spinner>
     </div>
   </div>
+  <div fxLayoutAlign="center center" *ngIf="currentSong">
+    <div class="spotify-box w-100" fxLayout="row" fxLayoutAlign="center center" *ngIf="!loadingSong">
+      <img src="{{ this.currentSong.item.album.images[2].url }}">
+      <div class="song-box pl-sm" fxLayout="column" fxLayoutAlign="center center">
+        <p class="ellipsis mb-xs">{{ this?.currentSong?.item?.name }}</p>
+        <p class="ellipsis mt-0">{{ this?.currentSong?.item?.artists[0].name }}</p>
+      </div>
+    </div>
+    <mat-spinner [diameter]="20" *ngIf="loadingSong"></mat-spinner>
+  </div>
+  <button mat-button (click)="back()">
+    <h1 class="mt-xs mb-xs">back</h1>
+  </button>
 </div>
