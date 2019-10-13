@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { SnackbarService } from '../../../services/snackbar.service';
+import { PartyService } from '../../../services/party.service';
 
 @Component({
   selector: 'app-alert',
@@ -13,15 +14,12 @@ export class AlertComponent implements OnInit {
   loginForm: FormGroup;
   loginError = '';
   loading = false;
-  alerts = [
-        { name: 'ITS DOLPH' },
-        { name: 'ITS DOLPH' },
-        { name: 'ITS DOLPH' },
-        { name: 'ITS DOLPH' },
-      ];
+  alerts = [];
+  partyId = null;
 
   constructor(
     private snackbarService: SnackbarService,
+    private partyService: PartyService,
     ) { }
 
   ngOnInit() {
@@ -30,9 +28,10 @@ export class AlertComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
+  async loadAlerts() {
     try {
       this.loading = true;
+      this.alerts = await this.partyService.getAlerts();
     } catch ({ message = 'Error authentication, please try again' }) {
       this.loginError = message;
       this.snackbarService.showError(message, 'Close');
@@ -40,4 +39,11 @@ export class AlertComponent implements OnInit {
       this.loading = false;
     }
   }
+
+  onSubmit() {
+    this.partyService.setParty(this.loginForm.getRawValue().keycode);
+    this.loadAlerts();
+    this.partyId = true;
+  }
+
 }

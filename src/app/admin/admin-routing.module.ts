@@ -7,9 +7,9 @@ import { PartySetupComponent } from './component/party-setup/party-setup.compone
 
 
 const routes: Routes = [
-  {  path: '', component: SpotifyTutorialComponent },
+  {  path: 'spotifyhelp', component: SpotifyTutorialComponent },
   { path: 'alerts', component: AlertComponent },
-  { path: 'setup', component: PartySetupComponent }
+  { path: '', component: PartySetupComponent }
 ];
 
 @NgModule({

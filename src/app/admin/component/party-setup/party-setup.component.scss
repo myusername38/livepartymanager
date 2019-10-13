@@ -18,11 +18,18 @@
 }
 h1 {
   color: white;
-  font-family: $big-shoulders
+  font-family: $big-shoulders;
+  text-align: center;
 }
 h2 {
   color: white;
-  font-family: $big-shoulders
+  font-family: $big-shoulders;
+  max-width: 200px;
+}
+a {
+  color: white;
+  font-family: $big-shoulders;
+  font-size: $font-md
 }
 p{
   color: white;
@@ -30,7 +37,7 @@ p{
   font-size: $font-md;
 }
 button {
-  max-width: 200px;
+
 }
 :host ::ng-deep .mat-form-field-underline {
   display: none !important;
@@ -42,3 +49,11 @@ button {
   border: 4px solid white;
   border-radius: 10px;
 }
+button{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+ }

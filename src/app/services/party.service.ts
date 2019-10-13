@@ -32,7 +32,7 @@ export class PartyService {
   }
   singup(email: string, password: string, partycode: string, spotify: string) {
     this.party = partycode;
-    return this.http.post(`${ this.partyURL }/post-alerts`, {email, password, partycode, spotify }).toPromise();
+    return this.http.post(`${ this.partyURL }/signup`, {email, password, partycode, spotify }).toPromise();
   }
   async getSpotify(): Promise<any> {
     return this.http.post(`${ this.partyURL }/get-spotify`, {party: this.party}).toPromise();
