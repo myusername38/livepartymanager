@@ -14,12 +14,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { UsersHomeComponent } from './components/users-home/users-home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsersHomeComponent
+    UsersHomeComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,

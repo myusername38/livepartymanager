@@ -1,0 +1,45 @@
+<div class="login-box w-100 p-sm pt-lg mt-sm text-center mlr-auto" fxLayout="column" fxLayoutAlign="center center">
+    <h1 class="mt-sm mb-sm">Add Items</h1>
+    <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h2 class="mb-xs mt-xs">Enter Item Name</h2>
+      <mat-form-field class="keycode mb-xs mt-xs mlr-auto" appearance="fill">
+        <mat-label>Item:</mat-label>
+        <input type="text" formControlName="keycode" class="form-control white" matInput/>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="mb-xs mt-xs w-100" [disabled]="loginForm.pristine || loginForm.invalid">
+        <div class="login-button" type="submit" fxLayout="row" fxLayoutAlign="center center">
+          <div class="placeholder mr-sm"></div>
+          <h1>Add Item</h1>
+          <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
+          <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
+        </div>
+      </button>
+      <button mat-raised-button color="primary" class="mb-xs mt-xs ml-md w-100">
+          <div class="login-button" type="submit" fxLayout="row" fxLayoutAlign="center center">
+            <div class="placeholder mr-sm"></div>
+            <h1>Finished?</h1>
+            <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
+            <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
+          </div>
+        </button>
+    </form>
+
+    <h2 class="mb-xs mt-xs">Enter Spotify Auth Code (Optional)</h2>
+      <mat-form-field class="keycode mb-xs mt-xs mlr-auto" appearance="fill">
+        <mat-label>Link Spotify And Click Enter</mat-label>
+        <input type="text" formControlName="keycode" class="form-control white" matInput/>
+      </mat-form-field>
+
+      <a href="http://www.livepartytracking.com/planners/">Spotify Linking Tutorial</a>
+
+      <button mat-raised-button color="primary" class="mb-xs mt-xs ml-md w-100">
+          <div class="login-button" type="submit" fxLayout="row" fxLayoutAlign="center center">
+            <div class="placeholder mr-sm"></div>
+            <h1>Link Spotify</h1>
+            <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
+            <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
+          </div>
+        </button>
+
+
+  </div>

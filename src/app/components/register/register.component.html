@@ -1,0 +1,28 @@
+<div class="login-box w-100 p-sm pt-lg mlr-auto mt-sm" fxLayout="column" fxLayoutAlign="center center">
+  <h1 class="mt-sm mb-sm">Register A Party</h1>
+  <form class="login-form w-100" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2 class="mb-xs mt-xs">Enter Email</h2>
+    <mat-form-field class="keycode" appearance="fill">
+      <mat-label>Email:</mat-label>
+      <input type="text" formControlName="keycode" class="form-control white" matInput/>
+    </mat-form-field>
+    <h2 class="mb-xs mt-xs">Enter Password</h2>
+    <mat-form-field class="keycode" appearance="fill">
+      <mat-label>Password:</mat-label>
+      <input type="text" formControlName="keycode" class="form-control white" matInput/>
+    </mat-form-field>
+    <h2 class="mb-xs mt-xs">Enter Guest Password</h2>
+    <mat-form-field class="keycode" appearance="fill">
+        <mat-label>Party Keycode:</mat-label>
+        <input type="text" formControlName="keycode" class="form-control white" matInput/>
+      </mat-form-field>
+    <button mat-raised-button color="primary" class="mb-xs mt-xs w-100" [disabled]="loginForm.pristine || loginForm.invalid">
+      <div class="login-button" type="submit" fxLayout="row" fxLayoutAlign="center center">
+        <div class="placeholder mr-sm"></div>
+        <h1>Create Party!</h1>
+        <mat-spinner [diameter]="20" class="ml-sm" *ngIf="loading"></mat-spinner>
+        <div class="placeholdaer ml-sm" *ngIf="!loading"></div>
+      </div>
+    </button>
+  </form>
+</div>

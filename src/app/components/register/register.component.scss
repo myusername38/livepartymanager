@@ -1,0 +1,49 @@
+@import '../../../vars.scss';
+
+.login-box {
+  background-color: rgba(26, 8, 59, .7);
+  border-radius: 20px;
+  max-width: 600px;
+}
+.keycode {
+  width: 100%;
+  min-width: 200px;
+}
+.input-outter{
+  border: 4px solid white;
+  border-radius: 10px;
+}
+.white{
+  color: white;
+}
+h1 {
+  color: white;
+  font-family: $big-shoulders
+}
+h2 {
+  color: white;
+  font-family: $big-shoulders
+}
+a {
+  color: white;
+  font-family: $big-shoulders;
+  font-size: $font-md
+}
+p{
+  color: white;
+  font-family: $big-shoulders;
+  font-size: $font-md;
+}
+button {
+  max-width: 200px;
+}
+:host ::ng-deep .mat-form-field-underline {
+  display: none !important;
+}
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: white !important;
+}
+:host ::ng-deep .mat-form-field-flex{
+  border: 4px solid white;
+  border-radius: 10px;
+}
